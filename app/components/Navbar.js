@@ -24,19 +24,19 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-6">
-          <a href="#home" className="hover:text-blue-800 font-medium">
+          <a href="#home" className="text-black hover:text-blue-800 font-medium">
             Home
           </a>
-          <a href="#about" className="hover:text-blue-800 font-medium">
+          <a href="#about" className="text-black hover:text-blue-800 font-medium">
             About
           </a>
-          <a href="#skills" className="hover:text-blue-800 font-medium">
+          <a href="#skills" className="text-black hover:text-blue-800 font-medium">
             Skills
           </a>
-          <a href="#projects" className="hover:text-blue-800 font-medium">
+          <a href="#projects" className="text-black hover:text-blue-800 font-medium">
             Projects
           </a>
-          <a href="#contact" className="hover:text-blue-800 font-medium">
+          <a href="#contact" className="text-black hover:text-blue-800 font-medium">
             Contact
           </a>
         </div>
@@ -52,19 +52,39 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white px-6 pb-4 flex flex-col gap-3 shadow-md">
-          <a href="#home" className="hover:text-blue-600 font-medium" onClick={() => setIsOpen(false)}>
+          <a
+            href="#home"
+            className="text-black hover:text-blue-600 font-medium"
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </a>
-          <a href="#about" className="hover:text-blue-600 font-medium" onClick={() => setIsOpen(false)}>
+          <a
+            href="#about"
+            className="text-black hover:text-blue-600 font-medium"
+            onClick={() => setIsOpen(false)}
+          >
             About
           </a>
-          <a href="#skills" className="hover:text-blue-600 font-medium" onClick={() => setIsOpen(false)}>
+          <a
+            href="#skills"
+            className="text-black hover:text-blue-600 font-medium"
+            onClick={() => setIsOpen(false)}
+          >
             Skills
           </a>
-          <a href="#projects" className="hover:text-blue-600 font-medium" onClick={() => setIsOpen(false)}>
+          <a
+            href="#projects"
+            className="text-black hover:text-blue-600 font-medium"
+            onClick={() => setIsOpen(false)}
+          >
             Projects
           </a>
-          <a href="#contact" className="hover:text-blue-600 font-medium" onClick={() => setIsOpen(false)}>
+          <a
+            href="#contact"
+            className="text-black hover:text-blue-600 font-medium"
+            onClick={() => setIsOpen(false)}
+          >
             Contact
           </a>
         </div>
