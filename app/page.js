@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Mail, Phone, Github, Linkedin } from "lucide-react"; // Contact Icons
@@ -23,51 +22,41 @@ import {
 } from "react-icons/si";
 
 export default function Portfolio() {
-  const [dark, setDark] = useState(false);
 
-  const projects = [
-    {
-      title: "Hotel Management System",
-      tech: ["Java", "MySQL"],
-      desc: "A console-based Java app integrated with MySQL for hotel reservations, customer records, and billing.",
-      link: "#",
-    },
+    const projects = [
     {
       title: "Cyber Chef",
       tech: ["React", "JavaScript"],
       desc: "A fun coding game where players add code 'ingredients' line by line to prepare recipes (tasks).",
-      link: "#",
+      link: "https://github.com/OviyaSenthilk/CyberChef.git",
+      deploy: "#",
     },
     {
       title: "Oviya Nursery School Website",
       tech: ["Express", "Tailwind", "React", "JS", "Node.js"],
       desc: "A clean and informative school website highlighting programs, gallery, and contact details.",
       link: "https://github.com/OviyaSenthilk/OviyaSchool.git",
+      deploy: "#",
     },
     {
       title: "E-commerce Platform",
       tech: ["MongoDB", "Express", "React", "Node.js"],
       desc: "A fully functional e-commerce platform with authentication, product catalog, cart, and payments.",
       link: "https://github.com/OviyaSenthilk/EFalong.git",
+      deploy: "#",
     },
     {
       title: "Portfolio Website",
       tech: ["Next.js", "Tailwind CSS"],
       desc: "A personal portfolio showcasing my journey, projects, and skills.",
       link: "https://github.com/OviyaSenthilk/Portfolio.git",
+      deploy: "#",
     },
   ];
 
-  return (
-    <div className={`${dark ? "bg-gray-900 text-gray-200" : "bg-gray-50 text-gray-800"} relative`}>
-      {/* Theme Toggle */}
-      <button
-        onClick={() => setDark(!dark)}
-        className="fixed top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full shadow bg-blue-600 text-white text-sm"
-      >
-        {dark ? "☀️" : "🌙"}
-      </button>
 
+  return (
+      <div className="bg-gray-50 text-gray-800 relative">
       {/* ================= Home ================= */}
       <section
         id="home"
@@ -128,7 +117,7 @@ export default function Portfolio() {
       </section>
 
       {/* ================= About ================= */}
-      <section id="about" className="min-h-screen px-6 pt-24" >
+      <section id="about" className="min-h-screen px-6 pt-28" >
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -230,68 +219,54 @@ export default function Portfolio() {
               </div>
 
               {/* Projects Grid */}
-              <div className="mt-12 grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-                {[
-                  {
-                    title: "Hotel Management System",
-                    tech: ["Java", "MySQL"],
-                    desc: "A console-based Java app integrated with MySQL for hotel reservations, customer records, and billing.",
-                  },
-                  {
-                    title: "Cyber Chef",
-                    tech: ["React", "JavaScript"],
-                    desc: "A fun coding game where players add code 'ingredients' line by line to prepare recipes (tasks).",
-                  },
-                  {
-                    title: "Oviya Nursery School Website",
-                    tech: ["Express", "Tailwind", "React", "JS", "Node.js"],
-                    desc: "A clean and informative school website highlighting programs, gallery, and contact details.",
-                  },
-                  {
-                    title: "E-commerce Platform",
-                    tech: ["MongoDB", "Express", "React", "Node.js"],
-                    desc: "A fully functional e-commerce platform with authentication, product catalog, cart, and payments.",
-                  },
-                  {
-                    title: "Portfolio Website",
-                    tech: ["Next.js", "Tailwind CSS"],
-                    desc: "A personal portfolio showcasing my journey, projects, and skills.",
-                  },
-                ].map((project, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.2, duration: 0.8 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.05 }}
-                    className="p-6 bg-white rounded-xl shadow-md text-left hover:shadow-xl transition"
-                  >
-                    <h2 className="text-xl font-semibold text-black-600 mb-2">
-                      {project.title}
-                    </h2>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tech.map((t, j) => (
-                        <span
-                          key={j}
-                          className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-gray-700 mb-4">{project.desc}</p>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500"
+          <div className="mt-12 grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+            {projects.map((project, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className="p-6 bg-white rounded-xl shadow-md text-left hover:shadow-xl transition"
+              >
+                <h2 className="text-xl font-semibold text-black mb-2">{project.title}</h2>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.tech.map((t, j) => (
+                    <span
+                      key={j}
+                      className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium"
                     >
-                      View Project
-                    </a>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">{project.desc}</p>
+                <div className="flex gap-4">
+                  {/* GitHub Repo Button */}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500"
+                  >
+                    View Project
+                  </a>
+
+                  {/* Deployment Button (placeholder) */}
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500"
+                  >
+                    View Deployment
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          </motion.section>
       {/* ================= Contact ================= */}
       <section id="contact" className="min-h-screen px-6 flex flex-col justify-between pt-28">
         <div>
