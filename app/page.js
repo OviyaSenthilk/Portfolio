@@ -42,19 +42,19 @@ export default function Portfolio() {
       title: "Oviya Nursery School Website",
       tech: ["Express", "Tailwind", "React", "JS", "Node.js"],
       desc: "A clean and informative school website highlighting programs, gallery, and contact details.",
-      link: "#",
+      link: "https://github.com/OviyaSenthilk/OviyaSchool.git",
     },
     {
       title: "E-commerce Platform",
       tech: ["MongoDB", "Express", "React", "Node.js"],
       desc: "A fully functional e-commerce platform with authentication, product catalog, cart, and payments.",
-      link: "#",
+      link: "https://github.com/OviyaSenthilk/EFalong.git",
     },
     {
       title: "Portfolio Website",
       tech: ["Next.js", "Tailwind CSS"],
       desc: "A personal portfolio showcasing my journey, projects, and skills.",
-      link: "#",
+      link: "https://github.com/OviyaSenthilk/Portfolio.git",
     },
   ];
 
